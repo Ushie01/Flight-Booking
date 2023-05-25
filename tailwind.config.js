@@ -4,6 +4,11 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@heathmont/moon-core-tw/**/*.{js,ts,jsx,tsx}',  
+  ],
+  presets: [
+    require('@heathmont/moon-core-tw/lib/private/presets/ds-moon-preset'),
   ],
   theme: {
     extend: {
@@ -12,7 +17,12 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        orange: {
+          50: '#EC441E'
+        }
+      }
     },
   },
-  plugins: [],
+  plugins: [ require('tailwindcss-rtl')]
 }
