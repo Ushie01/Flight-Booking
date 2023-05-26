@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { GenericBurgerRegular } from '@heathmont/moon-icons-tw';
-import { TravelAirplaneUp, TravelAirplaneDown } from '@heathmont/moon-icons-tw';
-import { ArrowsSorting } from '@heathmont/moon-icons-tw';
+import {
+  GenericBurgerRegular,
+  ArrowsSorting,
+  TravelAirplaneUp,
+  TravelAirplaneDown,
+  ControlsPlus
+} from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField } from '@/src/client/components/InputField';
-import { InputFieldForm } from '@/src/client/components/InputField';
+import { InputField, Input} from '@/src/client/components/InputField';
 
 
 const Home = () => {
@@ -24,7 +27,9 @@ const Home = () => {
         <p className="text-2xl font-bold ml-10">Book Flight</p>
         <GenericBurgerRegular width={40} height={40} color='black' />
       </nav>
+
       <ToggleNavbar />
+      
       <div className='p-4 bg-white rounded-lg mt-7 w-full'>
         <div className='relative w-full space-y-4'>
           <InputField
@@ -46,8 +51,59 @@ const Home = () => {
             stateCode={objectTwo.stateCode}
             airportName={objectTwo.airportName}
           />
-          <div className='mt-8'>
-            <InputFieldForm />
+        </div>
+       
+        <div className='mt-8'>
+          <div className='flex flex-row items-center justify-between mt-4 space-x-4 w-full'>
+            <div className='w-1/2'>
+              <Input
+                fieldName='Daparture'
+                icon={false}
+                widthFull={false}
+                textField={false}
+                secondIcon={false}
+                dateField={true}
+                text={''}
+              />
+            </div>
+            <div className='w-1/2'>
+              <Input
+                fieldName='Return'
+                icon={<ControlsPlus height={25} width={25} />}
+                widthFull={false}
+                textField={false}
+                secondIcon={false}
+                dateField={true}
+                text={''}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-6'>
+          <div className='flex flex-row items-center justify-between mt-4 space-x-4 w-full'>
+            <div className='w-1/2'>
+              <Input
+                fieldName='Travelle'
+                icon={false}
+                widthFull={false}
+                textField={true}
+                secondIcon={false}
+                dateField={false}
+                text={'Travelle'}
+              />
+            </div>
+            <div className='w-1/2'>
+              <Input
+                fieldName='Class'
+                icon={false}
+                widthFull={false}
+                textField={true}
+                secondIcon={false}
+                dateField={false}
+                text={'Class'}
+              />
+            </div>
           </div>
         </div>
       </div>

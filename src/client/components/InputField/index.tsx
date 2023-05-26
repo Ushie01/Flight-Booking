@@ -1,3 +1,5 @@
+import { ControlsPlus } from '@heathmont/moon-icons-tw';
+
 
 type fieldProps = {
   fieldName: string;
@@ -5,6 +7,16 @@ type fieldProps = {
   state: string;
   stateCode: string;
   airportName: string;
+}
+
+type dateProps = {
+  fieldName: string;
+  icon: React.ReactNode;
+  widthFull: boolean;
+  textField: boolean;
+  secondIcon: boolean;
+  dateField: boolean;
+  text: string
 }
 
 export const InputField = ({fieldName, icon, state, stateCode, airportName}: fieldProps) => {
@@ -31,15 +43,25 @@ export const InputField = ({fieldName, icon, state, stateCode, airportName}: fie
 };
 
 
-export const InputFieldForm = () => {
+export const Input = ({
+  fieldName,
+  icon,
+  widthFull,
+  secondIcon,
+  textField,
+  dateField,
+  text
+}: dateProps) => {
   return (
-    <div className="flex flex-col items-start justify-start border p-2 rounded-lg">
-      <p className="bg-white text-md p-1 -mt-6 text-gray-500">Departure</p>
-      {/* <input type="date" className="" /> */}
-      <div className="flex flex-row items-start justify-start h-6 w-6" >
-        <input type="date" className=""/>
-        <p>4/4/2022</p>
+    <div className={`flex flex-col items-start justify-start border p-4 rounded-lg ${widthFull ? 'w-full' : ''}`}>
+      <p className="bg-white text-md p-1 -mt-8 text-gray-500">{fieldName}</p>
+      <div className='flex flex-row items-center justify-between space-x-1'>
+        {icon ? <ControlsPlus height={15} width={15} /> : ""}
+        {textField ? <input type='text' className='text-md font-bold w-full borderless-input' value={text} /> : ""}
+        {dateField ? <input type='date' className='text-sm font-bold'/> : ""}
+        {secondIcon ? <ControlsPlus height={15} width={15} /> : ""}
       </div>
     </div>
   )
 }
+
