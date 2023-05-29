@@ -8,7 +8,7 @@ import {
   ControlsPlus
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField, Input} from '@/src/client/components/InputField';
+import { InputField, Input} from './../../src/client/shared/InputField';
 import { Button } from '@heathmont/moon-core-tw';
 import Frame from '../../src/assets/frame.png'
 import Navbar from '@/src/client/components/Navbar';
@@ -16,8 +16,16 @@ import Header from '@/src/client/components/Header';
 
 
 const Home = () => {
-  const [objectOne, setObjectOne] = useState({ state: 'Delhi', stateCode: 'DEL', airportName: 'Indira Gandhi International Airport' });
-  const [objectTwo, setObjectTwo] = useState({ state: 'Kolkata', stateCode: 'CCU', airportName: 'Subhash Chandra International Airport' });
+  const [objectOne, setObjectOne] = useState({
+    state: 'Delhi',
+    stateCode: 'DEL',
+    airportName: 'Indira Gandhi International Airport'
+  });
+  const [objectTwo, setObjectTwo] = useState({
+    state: 'Kolkata',
+    stateCode: 'CCU',
+    airportName: 'Subhash Chandra International Airport'
+  });
 
   const handleSwitch = () => {
     const temp = { ...objectOne };
@@ -25,8 +33,9 @@ const Home = () => {
     setObjectTwo(temp);
   }; 
 
+
   return (
-    <div className='bg-gray-100 p-4'>
+    <div className='bg-gray-50 p-4'>
     <div className='flex flex-col items-center justify-center'>
       <Header />
       <ToggleNavbar />

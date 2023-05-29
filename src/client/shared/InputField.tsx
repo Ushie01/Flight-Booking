@@ -1,4 +1,5 @@
 import { ControlsPlus } from '@heathmont/moon-icons-tw';
+import { StaticImageData } from 'next/image';
 
 
 type fieldProps = {

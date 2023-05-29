@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { ChairSvg } from "../../../SVG/Chair";
-import { AirplaneSvg } from "../../../SVG/AirplaneInFlight";
+import { FlightTravel } from "../../shared/FlightTravel";
 
 const Card = () => {
     return (
@@ -21,14 +20,7 @@ const Card = () => {
                         <p className="font-extrabold text-2xl">5.50</p>
                         <p className="text-gray-500 text-sm">{'DEL (Delhi)'}</p>
                     </div>
-                    <div className="relative flex flex-row items-center justify-center">
-                        <div className="p-1 bg-slate-300 rounded-full"></div>
-                        <hr className="w-44 text-slate-300 font-bold" />
-                        <div className="absolute mr-1 p-3 bg-orange-50 rounded-full">
-                            <AirplaneSvg height='30' width="30" color="white"/>
-                        </div>
-                        <div className="p-1 bg-slate-300 rounded-full"></div>
-                    </div>
+                    <FlightTravel />
                     <div className="flex flex-col items-end justify-end">
                         <p className="font-extrabold text-2xl">7.30</p>
                         <p className="text-gray-500 text-sm">{'CCU (Kolkata)'}</p>
