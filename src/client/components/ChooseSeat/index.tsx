@@ -11,7 +11,7 @@ const ChooseSeat = () => {
             <HeaderConatiner>
                 <HeaderItems
                     image={true}
-                    title='Flight Details'
+                    title='Choose Seat'
                 />
             </HeaderConatiner>
             <ButtonSign />

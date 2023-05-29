@@ -4,7 +4,7 @@ type Props = {
 
 const SeatContainer = ({children}: Props) => {
     return (
-        <div className="">
+        <div className="p-4 w-full bg-gray-50">
             {children}
         </div>
     )
