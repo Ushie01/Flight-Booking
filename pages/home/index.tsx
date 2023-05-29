@@ -12,6 +12,7 @@ import { InputField, Input} from '@/src/client/components/InputField';
 import { Button } from '@heathmont/moon-core-tw';
 import Frame from '../../src/assets/frame.png'
 import Navbar from '@/src/client/components/Navbar';
+import Header from '@/src/client/components/Header';
 
 
 const Home = () => {
@@ -27,12 +28,7 @@ const Home = () => {
   return (
     <div className='bg-gray-100 p-4'>
     <div className='flex flex-col items-center justify-center'>
-      <nav className="flex flex-row items-center justify-between w-full">
-        <div></div>
-        <p className="text-2xl font-bold ml-10">Book Flight</p>
-        <GenericBurgerRegular width={40} height={40} color='black' />
-      </nav>
-
+      <Header />
       <ToggleNavbar />
       
       <div className='p-4 bg-white rounded-lg mt-7 w-full shadow-lg'>
