@@ -9,7 +9,7 @@ const LandingPage = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(true);
-		}, 2000);
+		}, 500);
 
 		if (loading) {
 			router.push('/home');

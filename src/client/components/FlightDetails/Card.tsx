@@ -85,7 +85,7 @@ const Card = () => {
 					Cancel
 				</Button>
 				<Button className='h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
-					Cancel
+					Confirm
 				</Button>
 			</div>
 		</div>

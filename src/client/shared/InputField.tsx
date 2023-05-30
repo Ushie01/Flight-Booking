@@ -1,5 +1,3 @@
-import { ControlsPlus } from '@heathmont/moon-icons-tw';
-
 type fieldProps = {
 	fieldName: string;
 	icon: React.ReactNode;

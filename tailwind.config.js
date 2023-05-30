@@ -17,8 +17,9 @@ module.exports = {
           50: '#EC441E'
         },
         gray: {
-          50: '#F9FBFA'
-        }
+          50: '#F9FBFA',
+          60: '#E6E8E7'
+        },
       }
     },
   },

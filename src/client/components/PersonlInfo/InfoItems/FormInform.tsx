@@ -1,9 +1,9 @@
 import { Button } from '@heathmont/moon-core-tw';
 import { GenericUser, ControlsChevronDown } from '@heathmont/moon-icons-tw';
 import { Input } from '../../../shared/InputField';
-import { Cake } from '@/src/SVG/cake';
+import { Cake } from '@/src/SVG/Cake';
 import { Globe } from '@/src/SVG/Globe';
-import { Map } from '@/src/SVG/map';
+import { Map } from '@/src/SVG/Map';
 import { Name } from '@/src/SVG/Name';
 import { Passport } from '@/src/SVG/Passport';
 import { Calender } from '@/src/SVG/Calender';
