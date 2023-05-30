@@ -1,7 +1,7 @@
-import Details from "@/src/client/components/FlightDetails";
+import Details from '@/src/client/components/FlightDetails';
 
 const FlightDetails = () => {
-    return (<Details/>)
-}
+	return <Details />;
+};
 
 export default FlightDetails;

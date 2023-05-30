@@ -1,8 +1,8 @@
-import React from 'react'
-import ChooseSeat from '@/src/client/components/ChooseSeat'
+import React from 'react';
+import ChooseSeat from '@/src/client/components/ChooseSeat';
 
 const index = () => {
-  return (<ChooseSeat/>)
-}
+	return <ChooseSeat />;
+};
 
-export default index
+export default index;
