@@ -1,17 +1,17 @@
 import DetailContainer from './FlightDetailsContainer/DetailContainer';
-import HeaderConatiner from '../Header/HeaderContainer/HeaderContainer';
+import HeaderContainer from '../Header/HeaderContainer/HeaderContainer';
 import Card from './Card';
 import HeaderItems from '../Header/HeaderItems/HeaderItems';
 
 const Details = () => {
 	return (
 		<DetailContainer>
-			<HeaderConatiner>
+			<HeaderContainer>
 				<HeaderItems
 					image={true}
 					title='Flight Details'
 				/>
-			</HeaderConatiner>
+			</HeaderContainer>
 			<Card />
 		</DetailContainer>
 	);

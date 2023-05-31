@@ -61,13 +61,15 @@ export const Input = ({
 			className={`flex flex-col items-start justify-start border p-4 rounded-lg ${
 				widthFull ? 'w-full' : ''
 			}`}>
-			<p className='bg-white text-md p-1 -mt-8 text-gray-500'>{fieldName}</p>
+			<p className='text-md p-1 bg-gray-50 -mt-8 text-gray-500'>
+				{fieldName}
+			</p>
 			<div className='flex flex-row items-center justify-between w-full space-x-1'>
 				{icon ? icon : ''}
 				{textField ? (
 					<input
 						type='text'
-						className='text-md font-bold w-full borderless-input'
+						className='text-md font-bold bg-gray-50 w-full borderless-input'
 						placeholder={placeHolder ? placeHolder : ''}
 						value={text}
 					/>
@@ -77,16 +79,12 @@ export const Input = ({
 				{dateField ? (
 					<input
 						type='date'
-						className='text-sm font-bold'
+						className='text-sm bg-gray-50 font-bold'
 					/>
 				) : (
 					''
 				)}
-				{secondIcon ? (
-					secondIcon
-				) : (
-					''
-				)}
+				{secondIcon ? secondIcon : ''}
 			</div>
 		</div>
 	);

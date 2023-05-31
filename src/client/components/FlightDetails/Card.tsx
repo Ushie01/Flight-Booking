@@ -1,10 +1,8 @@
 import { Button } from '@heathmont/moon-core-tw';
-import { FlightTravel } from '../../shared/FlightTravel';
-import { Input } from '../../shared/InputField';
-import { useState } from 'react';
+import { TravelTime, TravelDate } from '../../shared/TravelTime';
 
 const Card = () => {
-	// const [click, setClick] = useState(flase);
+	// const [click, setClick] = useState(false);
 
 	return (
 		<div className='flex flex-col items-center justify-center'>
@@ -18,60 +16,9 @@ const Card = () => {
 				</div>
 
 				<hr className='text-gray-100 mt-3' />
-
-				<div className='p-4 mt-4'>
-					<div className='flex flex-row items-center justify-between'>
-						<div className='flex flex-col items-start justify-start'>
-							<p className='font-extrabold text-3xl'>5.50</p>
-							<p className='text-bold text-xl'>DEL</p>
-						</div>
-						<FlightTravel />
-						<div className='flex flex-col items-end justify-end'>
-							<p className='font-extrabold text-3xl'>7.30</p>
-							<p className='text-bold text-xl'>CCU</p>
-						</div>
-					</div>
-					<div className='flex flex-row items-center justify-between text-md text-gray-400  mt-3'>
-						<p className='text-start w-2/5'>
-							Indira Gandhi International Airport
-						</p>
-						<p className='text-end w-2/5'>
-							Subhash Chandra Bose International Airport
-						</p>
-					</div>
-				</div>
-
+				<TravelTime />
 				<hr className='text-gray-100 mt-3' />
-
-				<div className='p-4 mt-3'>
-					<div className='flex flex-row items-center justify-between mt-4 space-x-4 w-full'>
-						<div className='w-1/2'>
-							<Input
-								fieldName='Date'
-								icon={false}
-								widthFull={false}
-								textField={false}
-								secondIcon={false}
-								dateField={true}
-								text={''}
-								placeHolder=''
-							/>
-						</div>
-						<div className='w-1/2'>
-							<Input
-								fieldName='Time'
-								icon={true}
-								widthFull={false}
-								textField={true}
-								secondIcon={false}
-								dateField={false}
-								text={'Class'}
-								placeHolder=''
-							/>
-						</div>
-					</div>
-				</div>
-
+				<TravelDate />
 				<hr className='text-gray-100 mt-3' />
 
 				<div className='flex items-center justify-center space-x-3 p-6 mt-3 m-auto'>

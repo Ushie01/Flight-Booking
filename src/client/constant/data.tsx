@@ -82,3 +82,23 @@ export const RIGHT_SEAT = [
 	'1A',
 	'1B',
 ];
+
+
+export const SEAT_POSITION = [
+	{
+		text: 'Flight',
+		value: 'IN 230'
+	},
+	{
+		text: 'Gate',
+		value: '22'
+	},
+	{
+		text: 'Seat',
+		value: '2B'
+	},
+	{
+		text: 'Class',
+		value: 'Economy'
+	}
+];

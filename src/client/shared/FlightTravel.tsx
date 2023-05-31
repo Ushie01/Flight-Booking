@@ -8,8 +8,8 @@ export const FlightTravel = () => {
 			<hr className='w-44 text-slate-300 font-bold' />
 			<div className='absolute mr-1 p-2 bg-orange-50 rounded-full'>
 				<AirplaneSvg
-					height='40'
-					width='40'
+					height='30'
+					width='30'
 					color='white'
 				/>
 			</div>
