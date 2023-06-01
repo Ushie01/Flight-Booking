@@ -1,26 +1,24 @@
 import { Button } from '@heathmont/moon-core-tw';
 import { TravelTime, TravelDate } from '../../shared/TravelTime';
+import { FlightLogo } from '../../shared/FlightLogo';
+import { HrL } from '../../shared/HorizontalLine';
 
 const Card = () => {
-	// const [click, setClick] = useState(false);
-
 	return (
 		<div className='flex flex-col items-center justify-center'>
 			<div className='rounded-2xl bg-white shadow-lg mt-10'>
-				<div className='p-4'>
-					<div className='flex items-center justify-center'>
-						<p className='text-4xl font-extrabold text-blue-800 p-3 border'>
-							Logo
-						</p>
-					</div>
+				<div className='p-2'>
+					<FlightLogo />
 				</div>
-
-				<hr className='text-gray-100 mt-3' />
-				<TravelTime />
-				<hr className='text-gray-100 mt-3' />
-				<TravelDate />
-				<hr className='text-gray-100 mt-3' />
-
+				<HrL />
+				<div className='p-6'>
+					<TravelTime />
+				</div>
+				<HrL />
+				<div className='p-6'>
+					<TravelDate bgText='bg-white' />
+				</div>
+				<HrL />
 				<div className='flex items-center justify-center space-x-3 p-6 mt-3 m-auto'>
 					<p className='font-thin text-3xl'>Price</p>
 					<p className='text-5xl font-bold'>$230</p>

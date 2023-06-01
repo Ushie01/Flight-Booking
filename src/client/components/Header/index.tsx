@@ -2,12 +2,17 @@ import React from 'react';
 import HeaderConatiner from './HeaderContainer/HeaderContainer';
 import HeaderItems from './HeaderItems/HeaderItems';
 
-const Header = () => {
+type Props = {
+	text: string,
+	bool: boolean
+}
+
+const Header = ({text, bool}: Props) => {
 	return (
 		<HeaderConatiner>
 			<HeaderItems
-				image={false}
-				title='Book Flight'
+				image={bool}
+				title={text}
 			/>
 		</HeaderConatiner>
 	);

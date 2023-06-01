@@ -35,7 +35,10 @@ const Home = () => {
 	return (
 		<div className='bg-gray-50 p-4'>
 			<div className='flex flex-col items-center justify-center'>
-				<Header />
+				<Header
+					text='Book Flight'
+					bool={false}
+				/>
 				<ToggleNavbar />
 
 				<div className='p-4 bg-white rounded-lg mt-7 w-full shadow-lg'>

@@ -15,6 +15,7 @@ type dateProps = {
 	dateField: boolean;
 	text: string;
 	placeHolder: string;
+	bgText: string;
 };
 
 export const InputField = ({
@@ -55,13 +56,14 @@ export const Input = ({
 	dateField,
 	text,
 	placeHolder,
+	bgText
 }: dateProps) => {
 	return (
 		<div
 			className={`flex flex-col items-start justify-start border p-4 rounded-lg ${
 				widthFull ? 'w-full' : ''
 			}`}>
-			<p className='text-md p-1 bg-gray-50 -mt-8 text-gray-500'>
+			<p className={`text-md p-1 ${bgText} -mt-8 text-gray-500`}>
 				{fieldName}
 			</p>
 			<div className='flex flex-row items-center justify-between w-full space-x-1'>
@@ -69,7 +71,7 @@ export const Input = ({
 				{textField ? (
 					<input
 						type='text'
-						className='text-md font-bold bg-gray-50 w-full borderless-input'
+						className={`text-md font-bold ${bgText} w-full borderless-input`}
 						placeholder={placeHolder ? placeHolder : ''}
 						value={text}
 					/>
