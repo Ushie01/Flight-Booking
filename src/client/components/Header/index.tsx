@@ -2,17 +2,19 @@ import React from 'react';
 import HeaderConatiner from './HeaderContainer/HeaderContainer';
 import HeaderItems from './HeaderItems/HeaderItems';
 
+
 type Props = {
-	text: string,
-	bool: boolean
+	title: string;
+	backArrow: boolean
 }
 
-const Header = ({text, bool}: Props) => {
+
+const Header = ({title, backArrow}: Props) => {
 	return (
 		<HeaderConatiner>
 			<HeaderItems
-				image={bool}
-				title={text}
+				backArrow={backArrow}
+				title={title}
 			/>
 		</HeaderConatiner>
 	);

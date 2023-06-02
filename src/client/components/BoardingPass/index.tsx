@@ -10,7 +10,7 @@ const BoardingPass = () => {
 		<BoardingContainer>
 			<HeaderContainer>
 				<HeaderItems
-					image={true}
+					backArrow={true}
 					title='Boarding Pass'
 				/>
 			</HeaderContainer>

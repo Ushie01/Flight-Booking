@@ -5,6 +5,17 @@ import {
 	MailEnvelope,
 	GenericUser,
 } from '@heathmont/moon-icons-tw';
+import { AirplaneSvg } from '@/src/SVG/AirplaneInFlight';
+import { Bank } from '@/src/SVG/Bank';
+import { Bookings } from '@/src/SVG/Bookings';
+import { Bus } from '@/src/SVG/Bus';
+import { Hotel } from '@/src/SVG/Hotel';
+import { Rate } from '@/src/SVG/Rate';
+import { Support } from '@/src/SVG/Support';
+import { Ticket } from '@/src/SVG/Ticket';
+import { Travel } from '@/src/SVG/Travel';
+
+
 
 export const NAVBAR_DATA = [
 	{
@@ -15,7 +26,7 @@ export const NAVBAR_DATA = [
 	{
 		Image: FilesClipboardText,
 		text: 'Booking',
-		route: '/booking',
+		route: '/my-booking',
 	},
 	{
 		Image: TravelMeal,
@@ -101,4 +112,43 @@ export const SEAT_POSITION = [
 		text: 'Class',
 		value: 'Economy'
 	}
+];
+
+export const MENU_DATA = [
+	{
+		icon: Bookings,
+		text: 'My Bookings',
+	},
+	{
+		icon: Ticket,
+		text: 'Boarding Pass',
+	},
+	{
+		icon: Support,
+		text: 'Support',
+	},
+	{
+		icon: Rate,
+		text: 'Rate Us',
+	},
+	{
+		icon: AirplaneSvg,
+		text: 'Flight',
+	},
+	{
+		icon: Hotel,
+		text: 'Hotel',
+	},
+	{
+		icon: Bus,
+		text: 'Bus',
+	},
+	{
+		icon: Travel,
+		text: 'Tour',
+	},
+	{
+		icon: Bank,
+		text: 'Travel loan',
+	},
 ];

@@ -9,7 +9,7 @@ const ChooseSeat = () => {
 		<SeatContainer>
 			<HeaderConatiner>
 				<HeaderItems
-					image={true}
+					backArrow={true}
 					title='Choose Seat'
 				/>
 			</HeaderConatiner>

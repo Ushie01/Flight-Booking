@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import {
-	GenericBurgerRegular,
 	ArrowsSorting,
 	TravelAirplaneUp,
 	TravelAirplaneDown,
@@ -15,6 +14,7 @@ import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
 
 const Home = () => {
+	const [toggle, setToggle] = useState(false);
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
 		stateCode: 'DEL',
@@ -32,13 +32,20 @@ const Home = () => {
 		setObjectTwo(temp);
 	};
 
+	const handleClick = () => {
+		setToggle(!toggle);
+
+		console.log(toggle);
+	};
+
 	return (
 		<div className='bg-gray-50 p-4'>
 			<div className='flex flex-col items-center justify-center'>
 				<Header
-					text='Book Flight'
-					bool={false}
+					title='Book Flight'
+					backArrow={false}
 				/>
+
 				<ToggleNavbar />
 
 				<div className='p-4 bg-white rounded-lg mt-7 w-full shadow-lg'>
@@ -94,6 +101,7 @@ const Home = () => {
 									dateField={true}
 									text={''}
 									placeHolder=''
+									bgText='bg-white'
 								/>
 							</div>
 							<div className='w-1/2'>
@@ -111,6 +119,7 @@ const Home = () => {
 									dateField={true}
 									text={''}
 									placeHolder=''
+									bgText='bg-white'
 								/>
 							</div>
 						</div>
@@ -128,6 +137,7 @@ const Home = () => {
 									dateField={false}
 									text={'Travelle'}
 									placeHolder=''
+									bgText='bg-white'
 								/>
 							</div>
 
@@ -141,6 +151,7 @@ const Home = () => {
 									dateField={false}
 									text={'Class'}
 									placeHolder=''
+									bgText='bg-white'
 								/>
 							</div>
 						</div>
