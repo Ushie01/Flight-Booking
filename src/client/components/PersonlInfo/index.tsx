@@ -9,7 +9,7 @@ const PersonalInfo = () => {
 		<InfoContainer>
 			<Header
 				backArrow={true}
-				title='Choose Seat'
+				title='Personal Info'
 			/>
 			<FormInform />
 		</InfoContainer>

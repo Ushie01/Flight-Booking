@@ -7,10 +7,12 @@ const Payment = () => {
 
 	return (
 		<PaymentContainer>
-			<Header
-				title='My Booking'
-				backArrow={true}
-			/>
+			<div className='p-4'>
+				<Header
+					title='My Booking'
+					backArrow={true}
+				/>
+			</div>
 			<ViewPayemt />
 			<PaymentSection />
 		</PaymentContainer>

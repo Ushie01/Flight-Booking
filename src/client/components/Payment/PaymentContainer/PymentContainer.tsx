@@ -3,7 +3,7 @@ type Props = {
 };
 
 const PaymentContainer = ({ children }: Props) => {
-	return <div className='w-full bg-gray-60'>{children}</div>;
+	return <div className='w-full bg-gray-60 h-full'>{children}</div>;
 };
 
 export default PaymentContainer;

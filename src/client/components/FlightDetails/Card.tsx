@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@heathmont/moon-core-tw';
 import { TravelTime, TravelDate } from '../../shared/TravelTime';
 import { FlightLogo } from '../../shared/FlightLogo';
@@ -26,12 +27,16 @@ const Card = () => {
 			</div>
 
 			<div className='flex items-center justify-center w-full space-x-3 mt-10'>
-				<Button className='h-16 w-full rounded-xl bg-white border-2 border-orange-50 text-xl text-orange-50 font-bold'>
-					Cancel
-				</Button>
-				<Button className='h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
-					Confirm
-				</Button>
+				<Link href='/search-result' className='w-full'>
+					<Button className='h-16 w-full rounded-xl bg-white border-2 border-orange-50 text-xl text-orange-50 font-bold'>
+						Cancel
+					</Button>
+				</Link>
+				<Link href='/choose-seat'  className='w-full'>
+					<Button className='h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
+						Confirm
+					</Button>
+				</Link>
 			</div>
 		</div>
 	);

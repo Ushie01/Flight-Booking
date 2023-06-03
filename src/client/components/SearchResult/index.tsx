@@ -9,7 +9,7 @@ const Search = () => {
 		<SearchContainer>
 			<Header
 				backArrow={true}
-				title='Choose Seat'
+				title='Search Result'
 			/>
 			<Card />
 			<hr className='text-slate-400 w-full mt-5' />

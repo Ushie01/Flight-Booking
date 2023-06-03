@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { Button } from '@heathmont/moon-core-tw';
 import { ChairSvg } from '../../../SVG/Chair';
 import { FlightTravel } from '../../shared/FlightTravel';
 
@@ -43,9 +45,12 @@ const Card = () => {
 						<p className='text-2xl font-extrabold text-black'>$230</p>
 					</div>
 				</div>
-				<button className='font-bold text-xl text-white w-full pt-3 pb-3 bg-orange-50 shadow-lg rounded-lg mt-5'>
-					Check
-				</button>
+				
+				<Link href='flight-detail'>
+					<Button className='font-bold text-xl text-white h-16 w-full pt-3 pb-3 bg-orange-50 shadow-xl rounded-xl mt-5'>
+						Check
+					</Button>
+				</Link>
 			</div>
 		</div>
 	);

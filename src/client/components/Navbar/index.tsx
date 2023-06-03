@@ -1,7 +1,6 @@
 import NavbarConatiner from "./NavbarContainer/NavbarContainer";
 import NavbarItems from "./NavbarItems";
 
-
 const Navbar = () => {
     return (
         <NavbarConatiner>
@@ -10,4 +9,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Navbar; 

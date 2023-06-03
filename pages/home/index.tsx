@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
 	ArrowsSorting,
@@ -13,8 +14,8 @@ import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
 
+
 const Home = () => {
-	const [toggle, setToggle] = useState(false);
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
 		stateCode: 'DEL',
@@ -32,11 +33,6 @@ const Home = () => {
 		setObjectTwo(temp);
 	};
 
-	const handleClick = () => {
-		setToggle(!toggle);
-
-		console.log(toggle);
-	};
 
 	return (
 		<div className='bg-gray-50 p-4'>
@@ -157,11 +153,13 @@ const Home = () => {
 						</div>
 					</div>
 
-					<Button
-						color='orange'
-						className='w-full bg-orange-50 text-bold mt-6 text-white rounded-xl'>
-						Search
-					</Button>
+					<Link href="/search-result">
+						<Button
+							color='orange'
+							className='w-full bg-orange-50 text-bold mt-6 text-white rounded-xl'>
+							Search
+						</Button>
+					</Link>
 				</div>
 			</div>
 			<hr className='mt-7 border border-gray-200 w-full' />

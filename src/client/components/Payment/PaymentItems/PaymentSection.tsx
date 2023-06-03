@@ -1,11 +1,12 @@
 import React from 'react';
+import { Button } from '@heathmont/moon-core-tw';
+import Link from 'next/link';
 import { InputPayment } from '../PaymentComponent/Input';
 import Image from 'next/image';
 import amex from '../../../../assets/amex.png';
 import masterCard from '../../../../assets/mastercard.png';
 import paypal from '../../../../assets/paypal.png';
-import visa from '../../../../assets/visa.png'
-import { Button } from '@heathmont/moon-core-tw';
+import visa from '../../../../assets/visa.png';
 
 
 const PaymentSection = () => {
@@ -62,12 +63,20 @@ const PaymentSection = () => {
 				</div>
 
 				<div className='flex flex-col items-center justify-center space-y-4 mt-12'>
-					<Button className='h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
-						Confirm
-					</Button>
-					<Button className='h-16 w-full rounded-xl bg-white border-2 border-orange-50 text-xl text-orange-50 font-bold'>
-						Cancel
-					</Button>
+					<Link
+						href='/boarding-pass'
+						className='w-full'>
+						<Button className='h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
+							Confirm
+						</Button>
+					</Link>
+					<Link
+						href='/choose-seat'
+						className='w-full'>
+						<Button className='h-16 w-full rounded-xl bg-white border-2 border-orange-50 text-xl text-orange-50 font-bold'>
+							Cancel
+						</Button>
+					</Link>
 				</div>
 			</form>
 		</div>

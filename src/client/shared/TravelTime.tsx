@@ -9,15 +9,15 @@ type Prop = {
 export const TravelTime = () => {
 	return (
 		<div>
-			<div className='flex flex-row items-center justify-between'>
+			<div className='flex flex-row items-center justify-between w-full'>
 				<div className='flex flex-col items-start justify-start'>
 					<p className='font-extrabold text-3xl'>5.50</p>
 					<p className='text-bold text-xl'>DEL</p>
 				</div>
 				<FlightTravel />
-				<div className='flex flex-col items-end justify-end'>
+				<div className='flex flex-col items-end justify-end '>
 					<p className='font-extrabold text-3xl'>7.30</p>
-					<p className='text-bold text-xl'>CCU</p>
+					<p className='text-bold text-xl text-end'>CCU</p>
 				</div>
 			</div>
 			<div className='flex flex-row items-center justify-between text-md text-gray-400  mt-3'>

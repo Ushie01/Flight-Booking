@@ -30,7 +30,7 @@ const Boarding = () => {
 				</div>
 
 				<HrL />
-				<div className='space-y-3'>
+				<div className='space-y-6'>
 					<TravelTime />
 					<TravelDate bgText='bg-gray-50' />
 				</div>

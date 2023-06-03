@@ -22,6 +22,10 @@ const HeaderItems = ({ backArrow, title }: Prop) => {
 	const router = useRouter();
 	const pathname = router.pathname;
 
+	const handleClick = () => {
+		router.back();
+	}
+
 	return (
 		<>
 			<div className='flex flex-row items-center justify-between w-full'>
@@ -29,6 +33,7 @@ const HeaderItems = ({ backArrow, title }: Prop) => {
 					<ControlsChevronLeft
 						height={25}
 						width={25}
+						onClick={handleClick}
 					/>
 				) : (
 					<div></div>

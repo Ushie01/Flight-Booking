@@ -8,7 +8,7 @@ const Details = () => {
 		<DetailContainer>
 			<HeaderContainer>
 				<HeaderItems
-					image={true}
+					backArrow={true}
 					title='Flight Details'
 				/>
 			</HeaderContainer>

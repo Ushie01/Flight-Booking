@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@heathmont/moon-core-tw';
 import { GenericUser, ControlsChevronDown } from '@heathmont/moon-icons-tw';
 import { Input } from '../../../shared/InputField';
@@ -7,8 +8,6 @@ import { Map } from '@/src/SVG/Map';
 import { Name } from '@/src/SVG/Name';
 import { Passport } from '@/src/SVG/Passport';
 import { Calender } from '@/src/SVG/Calender';
-
-
 
 const FormInform = () => {
 	return (
@@ -38,6 +37,7 @@ const FormInform = () => {
 						dateField={false}
 						textField={true}
 						placeHolder='Enter your name here'
+						bgText='white'
 					/>
 				</div>
 
@@ -56,6 +56,7 @@ const FormInform = () => {
 						dateField={false}
 						textField={true}
 						placeHolder='Enter your name here'
+						bgText='white'
 					/>
 				</div>
 
@@ -74,6 +75,7 @@ const FormInform = () => {
 						dateField={false}
 						textField={true}
 						placeHolder='Enter your name here'
+						bgText='white'
 					/>
 				</div>
 
@@ -97,6 +99,7 @@ const FormInform = () => {
 						dateField={false}
 						textField={true}
 						placeHolder='Enter your name here'
+						bgText='white'
 					/>
 				</div>
 
@@ -120,12 +123,17 @@ const FormInform = () => {
 						dateField={false}
 						textField={true}
 						placeHolder='Enter your name here'
+						bgText='white'
 					/>
-                </div>
-                <Button className='rounded-xl h-16 w-full text-white font-bold text-3xl bg-orange-50'>
-                    Confirm
-                </Button>
-                <p className='text-orange-50 text-center text-xl'>Skip</p>
+				</div>
+				<Link
+					href='/payment'
+					className='w-full '>
+					<Button className='h-16 w-full rounded-xl bg-orange-50 mt-6 text-white font-bold text-xl'>
+						Confirm
+					</Button>
+				</Link>
+				<p className='text-orange-50 text-center text-xl'>Skip</p>
 			</form>
 		</div>
 	);
