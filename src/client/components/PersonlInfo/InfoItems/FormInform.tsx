@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import { Button } from '@heathmont/moon-core-tw';
 import { GenericUser, ControlsChevronDown } from '@heathmont/moon-icons-tw';
 import { Input } from '../../../shared/InputField';
 import { Cake } from '@/src/SVG/Cake';
@@ -8,6 +6,7 @@ import { Map } from '@/src/SVG/Map';
 import { Name } from '@/src/SVG/Name';
 import { Passport } from '@/src/SVG/Passport';
 import { Calender } from '@/src/SVG/Calender';
+import { DefaultButton } from '@/src/client/shared/Button';
 
 const FormInform = () => {
 	return (
@@ -126,13 +125,11 @@ const FormInform = () => {
 						bgText='white'
 					/>
 				</div>
-				<Link
+				<DefaultButton
 					href='/payment'
-					className='w-full '>
-					<Button className='h-16 w-full rounded-xl bg-orange-50 mt-6 text-white font-bold text-xl'>
-						Confirm
-					</Button>
-				</Link>
+					text='Confirm'
+					height='h-16'
+				/>
 				<p className='text-orange-50 text-center text-xl'>Skip</p>
 			</form>
 		</div>

@@ -9,11 +9,10 @@ import {
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
 import { InputField, Input } from './../../src/client/shared/InputField';
-import { Button } from '@heathmont/moon-core-tw';
+import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
-
 
 const Home = () => {
 	const [objectOne, setObjectOne] = useState({
@@ -32,7 +31,6 @@ const Home = () => {
 		setObjectOne({ ...objectTwo });
 		setObjectTwo(temp);
 	};
-
 
 	return (
 		<div className='bg-gray-50 p-4'>
@@ -153,13 +151,11 @@ const Home = () => {
 						</div>
 					</div>
 
-					<Link href="/search-result">
-						<Button
-							color='orange'
-							className='w-full bg-orange-50 text-bold mt-6 text-white rounded-xl'>
-							Search
-						</Button>
-					</Link>
+					<DefaultButton
+						href='/search-result'
+						text='Search'
+						height='h-16'
+					/>
 				</div>
 			</div>
 			<hr className='mt-7 border border-gray-200 w-full' />

@@ -3,7 +3,7 @@ import { TravelTime, TravelDate } from '../../shared/TravelTime';
 import SeatPosition from '../../shared/SeatPosition';
 import { HrL } from '../../shared/HorizontalLine';
 import { Barcode } from '../../../SVG/Barcode';
-import { Button } from '@heathmont/moon-core-tw';
+import { DefaultButton } from '../../shared/Button';
 
 const Boarding = () => {
 	return (
@@ -45,9 +45,11 @@ const Boarding = () => {
 					/>
 				</div>
 			</div>
-			<Button className='mt-12 h-16 w-full rounded-xl bg-orange-50 text-white font-bold text-xl'>
-				Download
-			</Button>
+			<DefaultButton
+				href='#'
+				text='Download'
+				height='h-16'
+			/>
 			<p className='text-center text-orange-50 p-5 font-bold'>
 				Book another flight
 			</p>

@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import Login from '@/src/client/auth/Login';
 
 const index = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+	return <Login />;
+};
 
-export default index
+export default index;

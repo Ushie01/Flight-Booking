@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import { Button } from '@heathmont/moon-core-tw';
 import { ChairSvg } from '../../../SVG/Chair';
 import { FlightTravel } from '../../shared/FlightTravel';
+import { DefaultButton } from '../../shared/Button';
 
 const Card = () => {
 	return (
@@ -45,12 +44,12 @@ const Card = () => {
 						<p className='text-2xl font-extrabold text-black'>$230</p>
 					</div>
 				</div>
-				
-				<Link href='flight-detail'>
-					<Button className='font-bold text-xl text-white h-16 w-full pt-3 pb-3 bg-orange-50 shadow-xl rounded-xl mt-5'>
-						Check
-					</Button>
-				</Link>
+
+				<DefaultButton
+					href='/flight-detail'
+					text='Check'
+					height='h-12'
+				/>
 			</div>
 		</div>
 	);

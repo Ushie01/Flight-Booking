@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import Frame from '../../../../assets/frame1.png';
-import Link from 'next/link';
 import { SelectSeatButton } from './Button';
 import { LEFT_SEAT } from '@/src/client/constant/data';
 import { RIGHT_SEAT } from '@/src/client/constant/data';
-import { Button } from '@heathmont/moon-core-tw';
+import { DefaultButton } from '@/src/client/shared/Button';
+import Frame from '../../../../assets/frame1.png';
 
 type Prop = {
 	seatData: Array<string>;
@@ -28,23 +27,23 @@ const Seat = ({ seatData }: Prop) => {
 
 const SelectSeat = () => {
 	return (
-		<div className='flex flex-col items-center justify-center  intersect p-8 w-full'>
+		<div className='flex flex-col items-center justify-center  intersect p-4 w-full'>
 			<Image
 				src={Frame}
 				alt='Frame.png'
-				className='w-[300px] h-full '
+				className='w-[300px] h-full p-5'
 			/>
+
 			<div className='flex flex-row items-center justify-between mt-12 space-x-28'>
 				<Seat seatData={LEFT_SEAT} />
-				<Seat seatData={ RIGHT_SEAT} />
+				<Seat seatData={RIGHT_SEAT} />
 			</div>
-			<Link
+
+			<DefaultButton
 				href='/personal-info'
-				className='w-full '>
-				<Button className='h-16 w-full rounded-xl bg-orange-50 mt-6 text-white font-bold text-xl'>
-					Confirm
-				</Button>
-			</Link>
+				text='Confirm'
+				height='h-16'
+			/>
 		</div>
 	);
 };
