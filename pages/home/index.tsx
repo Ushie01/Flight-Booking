@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Link from 'next/link';
+import { Calender } from '@/src/SVG/Calender';
 import Image from 'next/image';
 import {
 	ArrowsSorting,
@@ -8,7 +8,7 @@ import {
 	ControlsPlus,
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField, Input } from './../../src/client/shared/InputField';
+import { InputField, InputIcon, InputText } from './../../src/client/shared/InputField';
 import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
@@ -83,79 +83,42 @@ const Home = () => {
 						/>
 					</div>
 
-					<div className='mt-8'>
-						<div className='flex flex-row items-center justify-between mt-4 space-x-4 w-full'>
-							<div className='w-1/2'>
-								<Input
-									fieldName='Daparture'
-									icon={false}
-									widthFull={false}
-									textField={false}
-									secondIcon={false}
-									dateField={true}
-									text={''}
-									placeHolder=''
-									bgText='bg-white'
-								/>
-							</div>
-							<div className='w-1/2'>
-								<Input
-									fieldName='Return'
-									icon={
-										<ControlsPlus
-											height={25}
-											width={25}
-										/>
-									}
-									widthFull={false}
-									textField={false}
-									secondIcon={false}
-									dateField={true}
-									text={''}
-									placeHolder=''
-									bgText='bg-white'
-								/>
-							</div>
+					<div className='mt-8 space-y-6'>
+						<div className='flex flex-row items-center justify-between space-x-4'>
+							<InputIcon
+								label='Departure'
+								icon={
+									<Calender
+										height={25}
+										width={25}
+									/>
+								}
+								secondIcon={false}
+							/>
+							<InputIcon
+								label='Return'
+								icon={
+									<ControlsPlus
+										height={25}
+										width={25}
+									/>
+								}
+								secondIcon={false}
+							/>
+						</div>
+
+						<div className='flex flex-row items-center justify-between space-x-4'>
+							<InputText label='Traveller' placeHolder='1 Adult' />
+							<InputText label='Class' placeHolder='Economy'/>
 						</div>
 					</div>
-
 					<div className='mt-6'>
-						<div className='flex flex-row items-center justify-between mt-4 space-x-4 w-full'>
-							<div className='w-1/2'>
-								<Input
-									fieldName='Travelle'
-									icon={false}
-									widthFull={false}
-									textField={true}
-									secondIcon={false}
-									dateField={false}
-									text={'Travelle'}
-									placeHolder=''
-									bgText='bg-white'
-								/>
-							</div>
-
-							<div className='w-1/2'>
-								<Input
-									fieldName='Class'
-									icon={false}
-									widthFull={false}
-									textField={true}
-									secondIcon={false}
-									dateField={false}
-									text={'Class'}
-									placeHolder=''
-									bgText='bg-white'
-								/>
-							</div>
-						</div>
+						<DefaultButton
+							href='/search-result'
+							text='Search'
+							height='h-16'
+						/>
 					</div>
-
-					<DefaultButton
-						href='/search-result'
-						text='Search'
-						height='h-16'
-					/>
 				</div>
 			</div>
 			<hr className='mt-7 border border-gray-200 w-full' />

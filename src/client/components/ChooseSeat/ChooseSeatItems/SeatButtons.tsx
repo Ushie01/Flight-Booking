@@ -39,11 +39,13 @@ const SelectSeat = () => {
 				<Seat seatData={RIGHT_SEAT} />
 			</div>
 
-			<DefaultButton
-				href='/personal-info'
-				text='Confirm'
-				height='h-16'
-			/>
+			<div className='mt-6 w-full'>
+				<DefaultButton
+					href='/personal-info'
+					text='Confirm'
+					height='h-16'
+				/>
+			</div>
 		</div>
 	);
 };

@@ -14,3 +14,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* Hide the date icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
+/* styles.css */

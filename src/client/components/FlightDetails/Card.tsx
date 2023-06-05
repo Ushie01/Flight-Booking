@@ -30,13 +30,11 @@ const Card = () => {
 					text='Cancel'
 					height='h-16'
 				/>
-				<div className='w-full -mt-6'>
 					<DefaultButton
 						href='/choose-seat'
 						text='Confirm'
 						height='h-16'
 					/>
-				</div>
 			</div>
 		</div>
 	);

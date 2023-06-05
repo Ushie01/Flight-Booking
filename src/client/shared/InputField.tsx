@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+
 type fieldProps = {
 	fieldName: string;
 	icon: React.ReactNode;
@@ -7,16 +12,15 @@ type fieldProps = {
 };
 
 type dateProps = {
-	fieldName: string;
+	label: string;
 	icon: React.ReactNode;
-	widthFull: boolean;
-	textField: boolean;
-	secondIcon: React.ReactNode;
-	dateField: boolean;
-	text: string;
+	secondIcon: React.ReactNode | boolean;
+}
+
+type textProps = {
+	label: string;
 	placeHolder: string;
-	bgText: string;
-};
+}
 
 export const InputField = ({
 	fieldName,
@@ -47,47 +51,42 @@ export const InputField = ({
 	);
 };
 
-export const Input = ({
-	fieldName,
-	icon,
-	widthFull,
-	secondIcon,
-	textField,
-	dateField,
-	text,
-	placeHolder,
-	bgText
-}: dateProps) => {
+export const InputIcon = ({label, icon, secondIcon}: dateProps) => {
+	const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+	const handleDateChange = (date: Date | null) => {
+		setSelectedDate(date);
+	};
+
 	return (
-		<div
-			className={`flex flex-col items-start justify-start border p-4 rounded-lg ${
-				widthFull ? 'w-full' : ''
-			}`}>
-			<p className={`text-md p-1 ${bgText} -mt-8 text-gray-500`}>
-				{fieldName}
-			</p>
-			<div className='flex flex-row items-center justify-between w-full space-x-1'>
-				{icon ? icon : ''}
-				{textField ? (
-					<input
-						type='text'
-						className={`text-md font-bold ${bgText} w-full borderless-input`}
-						placeholder={placeHolder ? placeHolder : ''}
-						value={text}
-					/>
-				) : (
-					''
-				)}
-				{dateField ? (
-					<input
-						type='date'
-						className='text-sm bg-gray-50 font-bold'
-					/>
-				) : (
-					''
-				)}
-				{secondIcon ? secondIcon : ''}
+		<div className='flex flex-col  items-start justify-center w-full h-16 p-3 space-y-2 rounded-xl border'>
+			<p className=' bg-white pl-2 pr-2 -mt-8'>{label}</p>
+			<div className='flex flex-row items-start justify-center w-full  space-x-3 pl-2'>
+				{icon ? icon : ""}
+				<DatePicker
+					selected={selectedDate}
+					onChange={handleDateChange}
+					className='w-[100%]'
+				/>
+				{secondIcon ? secondIcon : ""}
 			</div>
 		</div>
 	);
 };
+
+
+export const InputText = ({label, placeHolder}: textProps) => {
+	return (
+		<div>
+			<div className='flex flex-col  items-start justify-center w-full h-16 p-3 space-y-2 rounded-xl border'>
+				<p className=' bg-white pl-2 pr-2 -mt-8'>{label}</p>
+				<div className='pl-2'>
+					<input
+						type='text'
+						placeholder={placeHolder}
+						className='w-[100%] '
+					/>
+				</div>
+			</div>
+		</div>
+	);
+}

@@ -45,11 +45,15 @@ const Boarding = () => {
 					/>
 				</div>
 			</div>
-			<DefaultButton
-				href='#'
-				text='Download'
-				height='h-16'
-			/>
+
+			<div className='mt-6'>
+				<DefaultButton
+					href='#'
+					text='Download'
+					height='h-16'
+				/>
+			</div>
+
 			<p className='text-center text-orange-50 p-5 font-bold'>
 				Book another flight
 			</p>

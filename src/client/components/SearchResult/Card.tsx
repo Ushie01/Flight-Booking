@@ -45,11 +45,13 @@ const Card = () => {
 					</div>
 				</div>
 
-				<DefaultButton
-					href='/flight-detail'
-					text='Check'
-					height='h-12'
-				/>
+				<div className='mt-6'>
+					<DefaultButton
+						href='/flight-detail'
+						text='Check'
+						height='h-12'
+					/>
+				</div>
 			</div>
 		</div>
 	);

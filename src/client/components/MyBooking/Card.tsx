@@ -16,11 +16,13 @@ const Card = () => {
 					<TravelDate bgText='bg-white' />
 					<HrL />
 					<SeatPosition />
-					<DefaultButton
-						href='/flight-detail'
-						text='Modify'
-						height='h-12'
-					/>
+					<div className='mt-6'>
+						<DefaultButton
+							href='/flight-detail'
+							text='Modify'
+							height='h-12'
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

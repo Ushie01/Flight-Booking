@@ -125,11 +125,13 @@ const FormInform = () => {
 						bgText='white'
 					/>
 				</div>
-				<DefaultButton
-					href='/payment'
-					text='Confirm'
-					height='h-16'
-				/>
+				<div className=''>
+					<DefaultButton
+						href='/payment'
+						text='Confirm'
+						height='h-16'
+					/>
+				</div>
 				<p className='text-orange-50 text-center text-xl'>Skip</p>
 			</form>
 		</div>
