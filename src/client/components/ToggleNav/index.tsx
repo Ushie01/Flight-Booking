@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 type FlightType = 'oneWay' | 'round' | 'multicity';
+type FormType = 'Email' | 'Phone Number';
 
 export const ToggleNavbar = () => {
 	const [flightType, setFlightType] = useState<FlightType>('oneWay');
@@ -37,3 +38,5 @@ export const ToggleNavbar = () => {
 		</ul>
 	);
 };
+
+

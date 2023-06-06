@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '@/src/client/auth/Login';
+import Login from '@/src/client/auth/authComponent/Login/Login';
 
 const index = () => {
 	return <Login />;

@@ -8,15 +8,13 @@ import {
 	ControlsPlus,
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField, DateInput, TimeInput, InputText } from './../../src/client/shared/InputField';
+import { InputField, DateInput, InputText } from './../../src/client/shared/InputField';
 import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
 
 const Home = () => {
-	const [date, setDate] = useState('');
-
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
 		stateCode: 'DEL',
@@ -96,6 +94,7 @@ const Home = () => {
 									/>
 								}
 								secondIcon={false}
+								bgText='bg-white'
 							/>
 							<DateInput
 								label='Departure'
@@ -106,6 +105,7 @@ const Home = () => {
 									/>
 								}
 								secondIcon={false}
+								bgText='bg-white'
 							/>
 						</div>
 

@@ -1,10 +1,12 @@
-import React from 'react';
-import { Input } from '../auth/authComponent/Input';
+import { Input } from '../Input';
 import { Checkbox } from '@heathmont/moon-core-tw';
-import { DefaultButton, GoogleButton } from '../shared/Button';
-import { HrL } from '../shared/HorizontalLine';
+import { DefaultButton, GoogleButton } from '../../../shared/Button';
+import { HrL } from '../../../shared/HorizontalLine';
+import { FormOption } from './LoginComponents/FormOption';
+import { useState } from 'react';
 
 const Login = () => {
+
 	return (
 		<div className='p-6 mt-10'>
 			<header className='flex flex-col items-start justify-start'>
@@ -13,17 +15,13 @@ const Login = () => {
 			</header>
 
 			<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
-				<div className='flex flex-row items-start justify-start text-xl space-x-6 '>
-					<p>Email</p>
-					<p>Phone Number</p>
-				</div>
+				<FormOption />
 
 				<Input
 					type='text'
 					placeholder='hello@example.com'
 					title='Email Address'
 				/>
-
 				<Input
 					type='password'
 					placeholder='**********'
@@ -54,9 +52,7 @@ const Login = () => {
 					height='h-12'
 				/>
 
-				<p className='text-orange-50 font-bold m-auto'>
-					Create an account
-				</p>
+				<p className='text-orange-50 font-bold m-auto'>Create an account</p>
 			</div>
 		</div>
 	);
