@@ -1,11 +1,12 @@
 import React from 'react';
-import { TimeCalendarDate, TimeClock } from '@heathmont/moon-icons-tw';
 import { FlightTravel } from './FlightTravel';
-import { DateInput } from './InputField';
+import { DateLabel, TimeLabel } from './DateTimeLabel';
 
-type Prop = {
+type Props = {
 	bgText: string;
-}
+	DateValue: string;
+	TimeValue: string;
+};
 
 export const TravelTime = () => {
 	return (
@@ -31,29 +32,17 @@ export const TravelTime = () => {
 	);
 };
 
-export const TravelDate = ({bgText}: Prop) => {
+export const TravelDate = ({ bgText, DateValue, TimeValue }: Props) => {
 	return (
 		<div className='flex flex-row items-center justify-between space-x-4'>
-			<DateInput
-				label='Departure'
-				icon={
-					<TimeCalendarDate
-						height={25}
-						width={25}
-					/>
-				}
-				secondIcon={false}
-			/>
-			<DateInput
-				label='Return'
-				icon={
-					<TimeClock
-						height={25}
-						width={25}
-					/>
-				}
-				secondIcon={false}
-			/>
+				<DateLabel
+					bgText={bgText}
+					value={DateValue}
+				/>
+				<TimeLabel
+					bgText={bgText}
+					value={TimeValue}
+				/>
 		</div>
 	);
 };

@@ -13,7 +13,11 @@ const Card = () => {
 				<div className='space-y-6 p-4'>
 					<HrL />
 					<TravelTime />
-					<TravelDate bgText='bg-white' />
+					<TravelDate
+						bgText='bg-white' 
+						DateValue='19/20/2023'
+						TimeValue='12:23am'
+					/>
 					<HrL />
 					<SeatPosition />
 					<div className='mt-6'>

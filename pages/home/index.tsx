@@ -8,13 +8,15 @@ import {
 	ControlsPlus,
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField, InputIcon, InputText } from './../../src/client/shared/InputField';
+import { InputField, DateInput, TimeInput, InputText } from './../../src/client/shared/InputField';
 import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
 
 const Home = () => {
+	const [date, setDate] = useState('');
+
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
 		stateCode: 'DEL',
@@ -85,7 +87,7 @@ const Home = () => {
 
 					<div className='mt-8 space-y-6'>
 						<div className='flex flex-row items-center justify-between space-x-4'>
-							<InputIcon
+							<DateInput
 								label='Departure'
 								icon={
 									<Calender
@@ -95,8 +97,8 @@ const Home = () => {
 								}
 								secondIcon={false}
 							/>
-							<InputIcon
-								label='Return'
+							<DateInput
+								label='Departure'
 								icon={
 									<ControlsPlus
 										height={25}
@@ -108,8 +110,14 @@ const Home = () => {
 						</div>
 
 						<div className='flex flex-row items-center justify-between space-x-4'>
-							<InputText label='Traveller' placeHolder='1 Adult' />
-							<InputText label='Class' placeHolder='Economy'/>
+							<InputText
+								label='Traveller'
+								placeHolder='1 Adult'
+							/>
+							<InputText
+								label='Class'
+								placeHolder='Economy'
+							/>
 						</div>
 					</div>
 					<div className='mt-6'>

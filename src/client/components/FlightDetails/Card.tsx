@@ -16,7 +16,11 @@ const Card = () => {
 				</div>
 				<HrL />
 				<div className='p-6'>
-					<TravelDate bgText='bg-white' />
+					<TravelDate
+						bgText='bg-white'
+						DateValue='08/09/2023'
+						TimeValue='20:12 am'
+					/>
 				</div>
 				<HrL />
 				<div className='flex items-center justify-center space-x-3 p-6 mt-3 m-auto'>

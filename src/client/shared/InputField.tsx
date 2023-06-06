@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import 'react-time-picker/dist/TimePicker.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -13,9 +14,17 @@ type fieldProps = {
 
 type dateProps = {
 	label: string;
-	icon: React.ReactNode;
-	secondIcon: React.ReactNode | boolean;
-}
+	icon?: JSX.Element | boolean;
+	secondIcon?: JSX.Element | boolean;
+	bgText: string;
+};
+
+type inputTextIconProp = {
+	label: string;
+	icon?: JSX.Element | boolean;
+	secondIcon?: JSX.Element | boolean;
+	placeHolder: string;
+};
 
 type textProps = {
 	label: string;
@@ -51,28 +60,43 @@ export const InputField = ({
 	);
 };
 
-export const InputIcon = ({label, icon, secondIcon}: dateProps) => {
-	const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-	const handleDateChange = (date: Date | null) => {
+
+export const DateInput = ({ label, icon, secondIcon, bgText }: dateProps) => {
+	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+	const handleDateChange = (date: Date) => {
 		setSelectedDate(date);
 	};
 
 	return (
 		<div className='flex flex-col  items-start justify-center w-full h-16 p-3 space-y-2 rounded-xl border'>
-			<p className=' bg-white pl-2 pr-2 -mt-8'>{label}</p>
+			<p className={`pl-2 pr-2 -mt-8 ${bgText}`}>{label}</p>
 			<div className='flex flex-row items-start justify-center w-full  space-x-3 pl-2'>
-				{icon ? icon : ""}
+				{icon}
 				<DatePicker
-					selected={selectedDate}
+					selected={selectedDate || undefined}
 					onChange={handleDateChange}
-					className='w-[100%]'
+					className={`w-[100%]  ${bgText} borderless-input`}
 				/>
-				{secondIcon ? secondIcon : ""}
+				{secondIcon ? secondIcon : ''}
 			</div>
 		</div>
 	);
 };
 
+
+
+export const InputTextIcon = ({label, icon, secondIcon, placeHolder} : inputTextIconProp) => {
+	return (
+		<div className='flex flex-col  items-start justify-center w-full h-16 p-3 space-y-2 rounded-xl border'>
+			<p className=' bg-white pl-2 pr-2 -mt-8'>{label}</p>
+			<div className='flex flex-row items-start justify-start w-full  space-x-3 pl-2'>
+				{icon}
+				<input type="text" placeholder={placeHolder} className='w-[100%]'/>
+				{secondIcon ? secondIcon : ''}
+			</div>
+		</div>
+	);
+}
 
 export const InputText = ({label, placeHolder}: textProps) => {
 	return (

@@ -1,5 +1,5 @@
 import { GenericUser, ControlsChevronDown } from '@heathmont/moon-icons-tw';
-import { Input } from '../../../shared/InputField';
+import { InputTextIcon, InputText } from '../../../shared/InputField';
 import { Cake } from '@/src/SVG/Cake';
 import { Globe } from '@/src/SVG/Globe';
 import { Map } from '@/src/SVG/Map';
@@ -20,111 +20,77 @@ const FormInform = () => {
 			<p className='mt-4 text-xl font-bold'>Hello Travellar</p>
 			<form
 				action=''
-				className='mt-8 w-full space-y-5'>
-				<div className='w-full'>
-					<Input
-						fieldName='Name'
-						icon={
-							<Name
-								height={25}
-								width={25}
-							/>
-						}
-						widthFull={true}
-						secondIcon={false}
-						text={'Enter your name here'}
-						dateField={false}
-						textField={true}
-						placeHolder='Enter your name here'
-						bgText='white'
-					/>
-				</div>
+				className='mt-8 w-full space-y-7'>
+				<InputTextIcon
+					label='Name'
+					icon={
+						<Name
+							height={25}
+							width={25}
+						/>
+					}
+					placeHolder='Enter your name here'
+					secondIcon={false}
+				/>
 
-				<div className='w-full'>
-					<Input
-						fieldName='Address'
-						icon={
-							<Map
-								height={25}
-								width={25}
-							/>
-						}
-						widthFull={true}
-						secondIcon={false}
-						text={'Enter your name here'}
-						dateField={false}
-						textField={true}
-						placeHolder='Enter your name here'
-						bgText='white'
-					/>
-				</div>
+				<InputTextIcon
+					label='Address'
+					icon={
+						<Map
+							height={25}
+							width={25}
+						/>
+					}
+					placeHolder='Enter your address here'
+					secondIcon={false}
+				/>
 
-				<div className='w-full'>
-					<Input
-						fieldName='Passport'
-						icon={
-							<Passport
-								height={25}
-								width={25}
-							/>
-						}
-						widthFull={true}
-						secondIcon={false}
-						text={'Enter your name here'}
-						dateField={false}
-						textField={true}
-						placeHolder='Enter your name here'
-						bgText='white'
-					/>
-				</div>
+				<InputTextIcon
+					label='Password'
+					icon={
+						<Map
+							height={25}
+							width={25}
+						/>
+					}
+					placeHolder='Ed 9839383'
+					secondIcon={false}
+				/>
 
-				<div className='w-full'>
-					<Input
-						fieldName='DOB'
-						icon={
-							<Cake
-								height={25}
-								width={25}
-							/>
-						}
-						widthFull={true}
-						secondIcon={
-							<Calender
-								height={25}
-								width={25}
-							/>
-						}
-						text={'Enter your name here'}
-						dateField={false}
-						textField={true}
-						placeHolder='Enter your name here'
-						bgText='white'
-					/>
-				</div>
+				<InputTextIcon
+					label='DOB'
+					icon={
+						<Cake
+							height={25}
+							width={25}
+						/>
+					}
+					placeHolder='12/09/1990'
+					secondIcon={
+						<Calender
+							height={25}
+							width={25}
+						/>
+					}
+				/>
 
-				<div className='w-full'>
-					<Input
-						fieldName='Country'
-						icon={
-							<Globe
-								height={25}
-								width={25}
-							/>
-						}
-						widthFull={true}
-						secondIcon={
-							<ControlsChevronDown
-								height={25}
-								width={25}
-							/>
-						}
-						text={'Enter your name here'}
-						dateField={false}
-						textField={true}
-						placeHolder='Enter your name here'
-						bgText='white'
-					/>
-				</div>
+				<InputTextIcon
+					label='Country'
+					icon={
+						<Globe
+							height={25}
+							width={25}
+						/>
+					}
+					placeHolder='Country'
+					secondIcon={
+						<ControlsChevronDown
+							height={25}
+							width={25}
+						/>
+					}
+				/>
+
 				<div className=''>
 					<DefaultButton
 						href='/payment'

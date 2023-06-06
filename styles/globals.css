@@ -4,9 +4,9 @@
 @import '@heathmont/moon-themes-tw/lib/moon.css';
 
 
-  .borderless-input {
-    outline: none;
-  }
+.borderless-input {
+  outline: none;
+}
 
 .intersect{
   background-image: url('../src/assets/intersect.png');
@@ -19,6 +19,11 @@
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 
 
 /* styles.css */

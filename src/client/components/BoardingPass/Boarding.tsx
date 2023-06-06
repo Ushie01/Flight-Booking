@@ -32,7 +32,11 @@ const Boarding = () => {
 				<HrL />
 				<div className='space-y-6'>
 					<TravelTime />
-					<TravelDate bgText='bg-gray-50' />
+					<TravelDate
+						bgText='bg-gray-50'
+						DateValue='19/20/2020'
+						TimeValue='12:30 am'
+					/>
 				</div>
 
 				<HrL />
