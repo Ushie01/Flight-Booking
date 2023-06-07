@@ -1,60 +1,72 @@
-import { Input } from '../Input';
+import { useState } from 'react';
+import { Input, NumberInput } from './LoginComponents/Input';
 import { Checkbox } from '@heathmont/moon-core-tw';
 import { DefaultButton, GoogleButton } from '../../../shared/Button';
 import { HrL } from '../../../shared/HorizontalLine';
 import { FormOption } from './LoginComponents/FormOption';
-import { useState } from 'react';
+import { Header } from '../../share/Header';
+import AuthLayout from '../authLayout';
 
 const Login = () => {
+	const [click, setClick] = useState('Email');
 
 	return (
-		<div className='p-6 mt-10'>
-			<header className='flex flex-col items-start justify-start'>
-				<p className='text-3xl font-bold'>Login</p>
-				<p className='text-gray-900 text-xl mt-5'>Welcome back to the app</p>
-			</header>
-
-			<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
-				<FormOption />
-
-				<Input
-					type='text'
-					placeholder='hello@example.com'
-					title='Email Address'
-				/>
-				<Input
-					type='password'
-					placeholder='**********'
-					title='Password'
+		<AuthLayout>
+			    <div></div>
+				<Header
+					title='Login'
+					text='Welcome back to the app'
 				/>
 
-				<Checkbox
-					label='Keep me signed in'
-					id='withLabel'
-					className='bg-orange-50 text-white rounded-lg'
-				/>
+				<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
+					<FormOption setClick={setClick} />
 
-				<DefaultButton
-					text='Login'
-					height='h-12'
-					href='#'
-				/>
+					{click === 'Email' ? (
+						<Input
+							type='text'
+							placeholder='hello@example.com'
+							label='Email Address'
+						/>
+					) : (
+						<NumberInput
+							type='number'
+							placeholder='09122883377'
+							label='Phone Number'
+						/>
+					)}
+					<Input
+						type='password'
+						placeholder='**********'
+						label='Password'
+					/>
 
-				<div className='flex flex-row items-center justify-center w-full'>
-					<HrL />
-					<p className='text-gray-400 text-center w-full'>or sign in with</p>
-					<HrL />
+					<Checkbox
+						label='Keep me signed in'
+						id='withLabel'
+						className='bg-orange-50 text-white rounded-lg'
+					/>
+
+					<DefaultButton
+						text='Login'
+						height='h-12'
+						href='#'
+					/>
+
+					<div className='flex flex-row items-center justify-center w-full'>
+						<HrL />
+						<p className='text-gray-400 text-center w-full'>or sign in with</p>
+						<HrL />
+					</div>
+
+					<GoogleButton
+						href='#'
+						text='Continue with Google'
+						height='h-12'
+					/>
+
+					<p className='text-orange-50 font-bold m-auto'>Create an account</p>
 				</div>
-
-				<GoogleButton
-					href='#'
-					text='Continue with Google'
-					height='h-12'
-				/>
-
-				<p className='text-orange-50 font-bold m-auto'>Create an account</p>
-			</div>
-		</div>
+			</AuthLayout>
 	);
 };
 

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 type FormType = 'Email' | 'Phone Number';
+type Prop = {
+	setClick: (type: FormType) => void;
+};
 
-
-export const FormOption = () => {
+export const FormOption = ({setClick}: Prop) => {
 	const [formType, setFormType] = useState<FormType>('Email');
 
 	const onHandleClick = (type: FormType) => {
 		setFormType(type);
+        setClick(type);
     };
     
 
