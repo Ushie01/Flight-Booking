@@ -12,61 +12,60 @@ const Login = () => {
 
 	return (
 		<AuthLayout>
-			    <div></div>
-				<Header
-					title='Login'
-					text='Welcome back to the app'
+			<div></div>
+			<Header
+				title='Login'
+				text='Welcome back to the app'
+			/>
+
+			<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
+				<FormOption setClick={setClick} />
+
+				{click === 'Email' ? (
+					<Input
+						type='text'
+						placeholder='hello@example.com'
+						label='Email Address'
+					/>
+				) : (
+					<NumberInput
+						type='number'
+						placeholder='09122883377'
+						label='Phone Number'
+					/>
+				)}
+				<Input
+					type='password'
+					placeholder='**********'
+					label='Password'
 				/>
 
-				<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
-					<FormOption setClick={setClick} />
+				<Checkbox
+					label='Keep me signed in'
+					id='withLabel'
+					className='bg-orange-50 text-white rounded-lg'
+				/>
 
-					{click === 'Email' ? (
-						<Input
-							type='text'
-							placeholder='hello@example.com'
-							label='Email Address'
-						/>
-					) : (
-						<NumberInput
-							type='number'
-							placeholder='09122883377'
-							label='Phone Number'
-						/>
-					)}
-					<Input
-						type='password'
-						placeholder='**********'
-						label='Password'
-					/>
+				<DefaultButton
+					text='Login'
+					height='h-12'
+					href='#'
+				/>
 
-					<Checkbox
-						label='Keep me signed in'
-						id='withLabel'
-						className='bg-orange-50 text-white rounded-lg'
-					/>
-
-					<DefaultButton
-						text='Login'
-						height='h-12'
-						href='#'
-					/>
-
-					<div className='flex flex-row items-center justify-center w-full'>
-						<HrL />
-						<p className='text-gray-400 text-center w-full'>or sign in with</p>
-						<HrL />
-					</div>
-
-					<GoogleButton
-						href='#'
-						text='Continue with Google'
-						height='h-12'
-					/>
-
-					<p className='text-orange-50 font-bold m-auto'>Create an account</p>
+				<div className='flex flex-row items-center justify-center w-full'>
+					<HrL />
+					<p className='text-gray-400 text-center w-full'>or sign in with</p>
+					<HrL />
 				</div>
-			</AuthLayout>
+
+				<GoogleButton
+					href='#'
+					text='Continue with Google'
+					height='h-12'
+				/>
+			</div>
+			<p className='text-orange-50 font-bold text-center m-8'>Create an account</p>
+		</AuthLayout>
 	);
 };
 

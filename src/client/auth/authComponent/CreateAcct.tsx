@@ -9,39 +9,36 @@ import { HrL } from '../../shared/HorizontalLine';
 
 
 const CreateAcct = () => {
-	const [click, setClick] = useState('Email');
 
 	return (
 		<AuthLayout>
 			<div></div>
 			<Header
-				title='Login'
-				text='Welcome back to the app'
+				title='Create an Account'
+				text={false}
 			/>
 
 			<div className='flex flex-col items-start justify-start mt-12 space-y-6'>
-				<FormOption setClick={setClick} />
-
-				{click === 'Email' ? (
-					<Input
-						type='text'
-						placeholder='hello@example.com'
-						label='Email Address'
-					/>
-				) : (
-					<NumberInput
-						type='number'
-						placeholder='09122883377'
-						label='Phone Number'
-					/>
-				)}
+				<Input
+					type='text'
+					placeholder='John Doe'
+					label='Name'
+				/>
+				<Input
+					type='email'
+					placeholder='hello@example.com'
+					label='Email Address'
+				/>
 				<Input
 					type='password'
 					placeholder='**********'
 					label='Password'
 				/>
 
-				<p className='text-gray-400'>By continuning you agree to our,<span className='text-orange-50'> Team and Services</span></p>
+				<p className='text-gray-400'>
+					By continuning you agree to our
+					<span className='text-orange-50'> Team and Service.</span>
+				</p>
 
 				<DefaultButton
 					text='Sign up'
@@ -60,8 +57,12 @@ const CreateAcct = () => {
 					text='Continue with Google'
 					height='h-12'
 				/>
-
-				<p className='text-orange-50 font-bold m-auto'>Already have an account? </p>
+			</div>
+			<div className='mt-7 text-center'>
+				<p className='font-bold'>
+					Already have an account?
+					<span className='text-orange-50'> Sign in here</span>
+				</p>
 			</div>
 		</AuthLayout>
 	);
