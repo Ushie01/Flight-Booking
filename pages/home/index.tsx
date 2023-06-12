@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Calender } from '@/src/SVG/Calender';
 import Image from 'next/image';
+import dotenv from 'dotenv';
+import { useGetAirportsQuery } from '@/src/store';
 import {
 	ArrowsSorting,
 	TravelAirplaneUp,
@@ -13,8 +15,43 @@ import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
+dotenv.config();
+
+type airportProp = {
+	airport_name: string;
+	city_iata_code: string;
+	timezone: string;
+};
+
+type uniqueProp = {
+	airport_name: string;
+}
 
 const Home = () => {
+	const { data, error, isLoading } = useGetAirportsQuery('');
+	const [destination, setDestination] = useState('');
+	const [arrival, setArrival] = useState('');
+
+	let uniqueValues: {
+		airportName: string;
+		city_iata: string;
+		timezone: string;
+	}[] = [];
+
+	if(data) {
+		uniqueValues = data?.data
+			?.filter((value: uniqueProp) =>
+				value.airport_name.toLowerCase().includes(destination.toLowerCase())
+			)
+			.map((value: airportProp) => ({
+				airportName: value.airport_name,
+				city_iata: value.city_iata_code,
+				timezone: value.timezone,
+			}));
+	};
+
+	console.log(uniqueValues);
+	
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
 		stateCode: 'DEL',
@@ -25,6 +62,8 @@ const Home = () => {
 		stateCode: 'CCU',
 		airportName: 'Subhash Chandra International Airport',
 	});
+
+
 
 	const handleSwitch = () => {
 		const temp = { ...objectOne };
@@ -53,6 +92,9 @@ const Home = () => {
 									className='-mt-1'
 								/>
 							}
+							value={destination}
+							uniqueValues={uniqueValues}
+							onChange={(e) => setDestination(e.target.value)}
 							state={objectOne.state}
 							stateCode={objectOne.stateCode}
 							airportName={objectOne.airportName}
@@ -77,6 +119,9 @@ const Home = () => {
 									className='-mt-1'
 								/>
 							}
+							uniqueValues={uniqueValues}
+							value={arrival}
+							onChange={(e) => setArrival(e.target.value)}
 							state={objectTwo.state}
 							stateCode={objectTwo.stateCode}
 							airportName={objectTwo.airportName}
@@ -97,7 +142,7 @@ const Home = () => {
 								bgText='bg-white'
 							/>
 							<DateInput
-								label='Departure'
+								label='Return'
 								icon={
 									<ControlsPlus
 										height={25}

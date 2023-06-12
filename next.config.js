@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// import { NextConfig } from 'next';
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  env: {
+    AIRPORTS_ACCESS_KEY: process.env.AIRPORTS_ACCESS_KEY,
+    // Add more environment variables here if needed
+  },
+};
+
+
