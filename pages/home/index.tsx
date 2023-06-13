@@ -17,38 +17,37 @@ import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
 dotenv.config();
 
-type airportProp = {
-	airport_name: string;
-	city_iata_code: string;
-	timezone: string;
-};
 
-type uniqueProp = {
+type Airport = {
 	airport_name: string;
+	city: string;
+	iata: string
 }
 
+
 const Home = () => {
-	const { data, error, isLoading } = useGetAirportsQuery('');
+	const { data, error, isLoading } = useGetAirportsQuery();
 	const [destination, setDestination] = useState('');
 	const [arrival, setArrival] = useState('');
 
+	console.log(data, error, isLoading);
+
 	let uniqueValues: {
 		airportName: string;
-		city_iata: string;
-		timezone: string;
+		iata: string;
+		city: string;
 	}[] = [];
 
-	if(data) {
-		uniqueValues = data?.data
-			?.filter((value: uniqueProp) =>
-				value.airport_name.toLowerCase().includes(destination.toLowerCase())
+	if (data?.length > 0) {
+		uniqueValues = data?.filter((value: Airport) =>
+				value.airportName?.toLowerCase().includes(destination?.toLowerCase())
 			)
-			.map((value: airportProp) => ({
-				airportName: value.airport_name,
-				city_iata: value.city_iata_code,
-				timezone: value.timezone,
+			.map((value: Airport) => ({
+				airportName: value.airportName,
+				iata: value.iata,
+				city: value.city,
 			}));
-	};
+	}
 
 	console.log(uniqueValues);
 	
