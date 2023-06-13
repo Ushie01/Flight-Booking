@@ -15,6 +15,7 @@ import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
 import Header from '@/src/client/components/Header';
+import Skeleton from '@/src/client/shared/Skeketon';
 dotenv.config();
 
 
@@ -78,6 +79,7 @@ const Home = () => {
 				/>
 
 				<ToggleNavbar />
+	
 
 				<div className='p-4 bg-white rounded-lg mt-7 w-full shadow-lg'>
 					<div className='relative w-full space-y-4'>
