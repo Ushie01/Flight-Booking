@@ -19,7 +19,7 @@ dotenv.config();
 
 
 type Airport = {
-	airport_name: string;
+	airportName: string;
 	city: string;
 	iata: string
 }
@@ -30,16 +30,15 @@ const Home = () => {
 	const [destination, setDestination] = useState('');
 	const [arrival, setArrival] = useState('');
 
-	console.log(data, error, isLoading);
-
 	let uniqueValues: {
 		airportName: string;
 		iata: string;
 		city: string;
 	}[] = [];
 
-	if (data?.length > 0) {
-		uniqueValues = data?.filter((value: Airport) =>
+	if (data && Object.keys(data).length > 0) {
+		uniqueValues = data
+			?.filter((value: Airport) =>
 				value.airportName?.toLowerCase().includes(destination?.toLowerCase())
 			)
 			.map((value: Airport) => ({
@@ -49,7 +48,7 @@ const Home = () => {
 			}));
 	}
 
-	console.log(uniqueValues);
+	// console.log(uniqueValues);
 	
 	const [objectOne, setObjectOne] = useState({
 		state: 'Delhi',
@@ -96,7 +95,7 @@ const Home = () => {
 							onChange={(e) => setDestination(e.target.value)}
 							state={objectOne.state}
 							stateCode={objectOne.stateCode}
-							airportName={objectOne.airportName}
+							// airportName={objectOne.airportName}
 						/>
 						<div className='flex items-start justify-end'>
 							<button
@@ -123,7 +122,7 @@ const Home = () => {
 							onChange={(e) => setArrival(e.target.value)}
 							state={objectTwo.state}
 							stateCode={objectTwo.stateCode}
-							airportName={objectTwo.airportName}
+							// airportName={objectTwo.airportName}
 						/>
 					</div>
 

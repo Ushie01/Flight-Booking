@@ -4,12 +4,16 @@ import DatePicker from 'react-datepicker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
-type fieldProps<T> = {
+
+type Airport = {
+	airportName: string;
+};
+
+type fieldProps<T extends Airport> = {
 	fieldName: string;
 	icon: React.ReactNode;
 	state: string;
 	stateCode: string;
-	airportName: string;
 	value: string;
 	onChange: React.ChangeEventHandler<HTMLInputElement>;
 	uniqueValues: Array<T>;
@@ -34,7 +38,8 @@ type textProps = {
 	placeHolder: string;
 };
 
-export const InputField = <T, > ({
+
+export const InputField = <T extends Airport>({
 	fieldName,
 	icon,
 	state,
@@ -43,7 +48,10 @@ export const InputField = <T, > ({
 	onChange,
 	uniqueValues,
 }: fieldProps<T>) => {
-	// console.log(uniqueValues);
+
+	const handleClick = () => {
+		console.log("hello world");
+	}
 	return (
 		<div className='flex flex-row rounded-lg border'>
 			<div className='flex flex-col items-start justify-start -mt-6 ml-2 w-2/12 p-2'>
@@ -64,16 +72,20 @@ export const InputField = <T, > ({
 						className='w-full'
 					/>
 					{value ? (
-						<div>
-							<div className='flex flex-row item  p-1 border hover:bg-gray-100'>
-								<MapsMarker
-									height={23}
-									width={23}
-								/>
-								<p>Indira Gandhi International</p>
-							</div>
-							<hr />
-						</div>
+						<>
+							{uniqueValues.map((tx, index) => (
+								<div key={index} onClick={handleClick}>
+									<div className='flex flex-row item p-1 border hover:bg-gray-100'>
+										<MapsMarker
+											height={23}
+											width={23}
+										/>
+										<p>{tx.airportName}</p>
+									</div>
+									<hr />
+								</div>
+							))}
+						</>
 					) : (
 						''
 					)}
@@ -82,6 +94,7 @@ export const InputField = <T, > ({
 		</div>
 	);
 };
+
 
 export const DateInput = ({ label, icon, secondIcon, bgText }: dateProps) => {
 	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
