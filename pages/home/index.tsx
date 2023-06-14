@@ -10,7 +10,11 @@ import {
 	ControlsPlus,
 } from '@heathmont/moon-icons-tw';
 import { ToggleNavbar } from '@/src/client/components/ToggleNav';
-import { InputField, DateInput, InputText } from './../../src/client/shared/InputField';
+import {
+	InputField,
+	DateInput,
+	InputText,
+} from './../../src/client/shared/InputField';
 import { DefaultButton } from '@/src/client/shared/Button';
 import Frame from '../../src/assets/frame.png';
 import Navbar from '@/src/client/components/Navbar';
@@ -18,18 +22,26 @@ import Header from '@/src/client/components/Header';
 import Skeleton from '@/src/client/shared/Skeketon';
 dotenv.config();
 
-
 type Airport = {
 	airportName: string;
 	city: string;
-	iata: string
-}
-
+	iata: string;
+};
 
 const Home = () => {
 	const { data, error, isLoading } = useGetAirportsQuery();
 	const [destination, setDestination] = useState('');
 	const [arrival, setArrival] = useState('');
+	const [objectOne, setObjectOne] = useState({
+		city: 'Delhi',
+		iata: 'DEL',
+		airportName: 'Indira Gandhi International Airport',
+	});
+	const [objectTwo, setObjectTwo] = useState({
+		city: 'Kolkata',
+		iata: 'CCU',
+		airportName: 'Subhash Chandra International Airport',
+	});
 
 	let uniqueValues: {
 		airportName: string;
@@ -49,21 +61,6 @@ const Home = () => {
 			}));
 	}
 
-	// console.log(uniqueValues);
-	
-	const [objectOne, setObjectOne] = useState({
-		state: 'Delhi',
-		stateCode: 'DEL',
-		airportName: 'Indira Gandhi International Airport',
-	});
-	const [objectTwo, setObjectTwo] = useState({
-		state: 'Kolkata',
-		stateCode: 'CCU',
-		airportName: 'Subhash Chandra International Airport',
-	});
-
-
-
 	const handleSwitch = () => {
 		const temp = { ...objectOne };
 		setObjectOne({ ...objectTwo });
@@ -79,7 +76,6 @@ const Home = () => {
 				/>
 
 				<ToggleNavbar />
-	
 
 				<div className='p-4 bg-white rounded-lg mt-7 w-full shadow-lg'>
 					<div className='relative w-full space-y-4'>
@@ -95,9 +91,10 @@ const Home = () => {
 							value={destination}
 							uniqueValues={uniqueValues}
 							onChange={(e) => setDestination(e.target.value)}
-							state={objectOne.state}
-							stateCode={objectOne.stateCode}
-							// airportName={objectOne.airportName}
+							clickAirport={setObjectOne}
+							city={objectOne.city}
+							iata={objectOne.iata}
+							airportName={objectOne.airportName}
 						/>
 						<div className='flex items-start justify-end'>
 							<button
@@ -122,9 +119,10 @@ const Home = () => {
 							uniqueValues={uniqueValues}
 							value={arrival}
 							onChange={(e) => setArrival(e.target.value)}
-							state={objectTwo.state}
-							stateCode={objectTwo.stateCode}
-							// airportName={objectTwo.airportName}
+							clickAirport={setObjectTwo}
+							city={objectTwo.city}
+							iata={objectTwo.iata}
+							airportName={objectTwo.airportName}
 						/>
 					</div>
 
