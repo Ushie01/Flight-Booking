@@ -1,4 +1,10 @@
-import React, { useState, MouseEventHandler } from 'react';
+import React, {
+	useState,
+	useEffect,
+	MouseEventHandler,
+	Dispatch,
+	SetStateAction,
+} from 'react';
 import { MapsMarker } from '@heathmont/moon-icons-tw';
 import DatePicker from 'react-datepicker';
 import 'react-time-picker/dist/TimePicker.css';
@@ -25,6 +31,7 @@ type dateProps = {
 	icon?: JSX.Element | boolean;
 	secondIcon?: JSX.Element | boolean;
 	bgText: string;
+	onChange: Dispatch<SetStateAction<string>>;
 };
 
 type inputTextIconProp = {
@@ -113,10 +120,31 @@ export const InputField = <T extends Airport>({
 	);
 };
 
-export const DateInput = ({ label, icon, secondIcon, bgText }: dateProps) => {
+export const DateInput = ({
+	label,
+	icon,
+	secondIcon,
+	bgText,
+	onChange,
+}: dateProps) => {
 	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+	
+	useEffect(() => {
+		const formattedDate = formatDate(selectedDate);
+		onChange(formattedDate);
+	}, [selectedDate, onChange]);
+
 	const handleDateChange = (date: Date) => {
 		setSelectedDate(date);
+	};
+
+	const formatDate = (date: Date): string => {
+		const formattedDate = date.toLocaleDateString('en-US', {
+			day: 'numeric',
+			month: 'numeric',
+			year: 'numeric',
+		});
+		return formattedDate;
 	};
 
 	return (

@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/client/shared/InputField.tsx", "dotenv.config.js", "next.config.js", "src/client/shared/Skeketon.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/client/shared/InputField.tsx", "dotenv.config.js", "next.config.js", "src/client/shared/Skeketon.tsx", "src/client/shared/useDate.ts"],
   "exclude": ["node_modules"]
 }

@@ -32,6 +32,8 @@ const Home = () => {
 	const { data, error, isLoading } = useGetAirportsQuery();
 	const [destination, setDestination] = useState('');
 	const [arrival, setArrival] = useState('');
+	const [departure, setDeparture] = useState('');
+	const [returnDate, setReturnDate] = useState('');
 	const [objectOne, setObjectOne] = useState({
 		city: 'Delhi',
 		iata: 'DEL',
@@ -42,6 +44,14 @@ const Home = () => {
 		iata: 'CCU',
 		airportName: 'Subhash Chandra International Airport',
 	});
+
+	const travelData = {
+		destination: objectOne.iata,
+		arrival: objectTwo.iata,
+		departure,
+		returnDate,
+	};
+	console.log(travelData)
 
 	let uniqueValues: {
 		airportName: string;
@@ -96,6 +106,7 @@ const Home = () => {
 							iata={objectOne.iata}
 							airportName={objectOne.airportName}
 						/>
+
 						<div className='flex items-start justify-end'>
 							<button
 								onClick={handleSwitch}
@@ -107,6 +118,7 @@ const Home = () => {
 								/>
 							</button>
 						</div>
+
 						<InputField
 							fieldName='To'
 							icon={
@@ -136,6 +148,7 @@ const Home = () => {
 										width={25}
 									/>
 								}
+								onChange={setDeparture}
 								secondIcon={false}
 								bgText='bg-white'
 							/>
@@ -147,6 +160,7 @@ const Home = () => {
 										width={25}
 									/>
 								}
+								onChange={setReturnDate}
 								secondIcon={false}
 								bgText='bg-white'
 							/>
