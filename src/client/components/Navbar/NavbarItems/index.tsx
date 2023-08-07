@@ -3,7 +3,6 @@ import Link from "next/link";
 import { NAVBAR_DATA } from "@/src/client/constant/data";
 
 
-
 const NavbarItems = () => {
     const router = useRouter();
     const pathname = router.pathname;

@@ -24,7 +24,7 @@ const HeaderItems = ({ backArrow, title }: Prop) => {
 
 	const handleClick = () => {
 		router.back();
-	}
+	};
 
 	return (
 		<>
@@ -63,7 +63,7 @@ const HeaderItems = ({ backArrow, title }: Prop) => {
 					!isOpen && 'hidden'
 				} flex fixed top-0 left-0 w-full z-20 h-full bg-black/50`}
 			/>
-			
+
 			<div
 				className={`${
 					isOpen ? 'translate-x-50' : 'hidden'

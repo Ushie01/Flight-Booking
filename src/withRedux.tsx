@@ -1,16 +1,15 @@
+import React from 'react';
 import { Provider } from 'react-redux';
 import { AppProps } from 'next/app';
 import store from './store';
 
-
-const withRedux = (WrappedComponent: React.ComponentType<AppProps>) => {
-	const WithRedux = ({...props}:  AppProps) => (
+const WithRedux = (WrappedComponent: any) => {
+	const withReduxComponent = ({ ...props }) => (
 		<Provider store={store}>
 			<WrappedComponent {...props} />
 		</Provider>
 	);
-
-	return WithRedux;
+	return withReduxComponent;
 };
 
-export default withRedux;
+export default WithRedux;

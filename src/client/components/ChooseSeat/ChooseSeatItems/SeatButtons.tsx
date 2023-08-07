@@ -3,7 +3,7 @@ import { SelectSeatButton } from './Button';
 import { LEFT_SEAT } from '@/src/client/constant/data';
 import { RIGHT_SEAT } from '@/src/client/constant/data';
 import { DefaultButton } from '@/src/client/shared/Button';
-import Frame from '../../../../assets/frame1.png';
+import Frame from '../../../../assets/Frame1.png'
 
 type Prop = {
 	seatData: Array<string>;
