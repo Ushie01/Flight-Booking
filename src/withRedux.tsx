@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { AppProps } from 'next/app';
+// import { AppProps } from 'next/app';
 import store from './store';
 
 const WithRedux = (WrappedComponent: any) => {

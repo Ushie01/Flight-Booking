@@ -15,7 +15,6 @@ const Details = () => {
 		cabinClass: 'economy',
 	});
 
-	console.log(data);
 	return (
 		<DetailContainer>
 			<HeaderContainer>
