@@ -27,11 +27,11 @@ const Seat = ({ seatData }: Prop) => {
 
 const SelectSeat = () => {
 	return (
-		<div className='flex flex-col items-center justify-center  intersect p-4 w-full'>
+		<div className='flex flex-col items-center justify-center bg-white rounded-t-full  p-4 w-full'>
 			<Image
 				src={Frame}
 				alt='Frame.png'
-				className='w-[300px] h-full p-5'
+				className='w-[300px] h-full mt-2'
 			/>
 
 			<div className='flex flex-row items-center justify-between mt-12 space-x-28'>
