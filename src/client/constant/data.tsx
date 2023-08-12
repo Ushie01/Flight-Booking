@@ -118,37 +118,46 @@ export const MENU_DATA = [
 	{
 		icon: Bookings,
 		text: 'My Bookings',
+		href: 'my-booking',
 	},
 	{
 		icon: Ticket,
 		text: 'Boarding Pass',
+		href: 'boarding-pass',
 	},
 	{
 		icon: Support,
 		text: 'Support',
+		href: '#',
 	},
 	{
 		icon: Rate,
 		text: 'Rate Us',
+		href: '#',
 	},
 	{
 		icon: AirplaneSvg,
 		text: 'Flight',
+		href: '#',
 	},
 	{
 		icon: Hotel,
 		text: 'Hotel',
+		href: '#',
 	},
 	{
 		icon: Bus,
 		text: 'Bus',
+		href: '#',
 	},
 	{
 		icon: Travel,
 		text: 'Tour',
+		href: '#',
 	},
 	{
 		icon: Bank,
 		text: 'Travel loan',
+		href: '#',
 	},
 ];

@@ -100,7 +100,7 @@ const HeaderItems = ({ backArrow, title }: Prop) => {
 									</div>
 								)}
 								<Link
-									href='#'
+									href={v.href}
 									className={`flex flex-row items-start justify-start ${
 										index >= 4 ? 'space-x-3 text-sm' : 'space-x-4'
 									}`}>
