@@ -9,7 +9,7 @@
 }
 
 .intersect{
-  background-image: url('../src/assets/intersect.png');
+  background-image: url('@/src/assets/intersect.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
